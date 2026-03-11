@@ -133,6 +133,7 @@ def predict():
     return jsonify(result)
 
 if __name__ == '__main__':
-    print("\n🎫 IT Ticket Priority Classifier")
-    print("   Open your browser at: http://localhost:5000\n")
-    app.run(debug=True, port=5000)
+    port = int(os.environ.get('PORT', 5000))
+    print(f"\n🎫 IT Ticket Priority Classifier")
+    print(f"   Running on port {port}\n")
+    app.run(host='0.0.0.0', port=port, debug=False)
